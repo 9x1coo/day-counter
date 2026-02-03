@@ -1,8 +1,14 @@
 import requests
-import json
+import os
 from datetime import datetime, date
 
+APP_ID = os.environ.get("APP_ID")
+APP_SECRET = os.environ.get("APP_SECRET")
+user_openids = [os.environ.get("USER_1"), os.environ.get("USER_2")]
+TEMPLATE_ID = os.environ.get("TEMPLATE_ID")
 DATE_TOGETHER = "2019-09-22"
+
+HF_API_TOKEN = os.environ.get("HF_API_TOKEN")
 HF_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct"
 
 def get_access_token():
