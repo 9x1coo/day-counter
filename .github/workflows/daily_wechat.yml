@@ -29,7 +29,7 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
           APP_SECRET: ${{ secrets.APP_SECRET }}
           HF_API_TOKEN: ${{secrets.HF_API_TOKEN}}
-          TEMPLATE_ID: ${{secrects.TEMPLATE_ID}}
-          USER_1: ${{secrects.USER_1}}
-          USER_2: ${{secrects.USER_2}}
+          TEMPLATE_ID: ${{secrets.TEMPLATE_ID}}
+          USER_1: ${{secrets.USER_1}}
+          USER_2: ${{secrets.USER_2}}
         run: python wechat_bot.py
