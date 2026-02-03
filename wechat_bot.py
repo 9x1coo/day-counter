@@ -34,7 +34,7 @@ def date_counters():
 
     days_until = (next_anniversary - today).days
 
-    return year_count, days_since, days_until
+    return year_count, days_since, days_until, today
 
 def get_weekday():
     week_map = ["一", "二", "三", "四", "五", "六", "日"]
@@ -77,7 +77,7 @@ def get_ai_message(prompt="用温柔的方式说一句不超过10字的话给男
 
 def send_message(OPENID, ai_msg):
     token = get_access_token()
-    year_count, days_since, days_until = date_counters()
+    year_count, days_since, days_until, today = date_counters()
     weekday = get_weekday()
     # ai_msg = get_ai_message().strip('"')
 
@@ -87,6 +87,7 @@ def send_message(OPENID, ai_msg):
         "touser": OPENID,
         "template_id": TEMPLATE_ID,
         "data": {
+            "date": {"value": today.strftime("%Y-%m-%d")},
             "weekday": {"value": weekday},
             "year": {"value": year_count+1},
             "until": {"value": days_until},
@@ -101,4 +102,5 @@ def send_message(OPENID, ai_msg):
 ai_msg = get_ai_message().strip('"')
 
 for id in user_openids:
+
     send_message(id, ai_msg)
