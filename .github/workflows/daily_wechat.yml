@@ -2,7 +2,7 @@ name: Daily WeChat Message
 
 on:
   schedule:
-    - cron: '0 1 * * *' 
+    - cron: '08 1 * * *' 
   workflow_dispatch:
 
 jobs:
