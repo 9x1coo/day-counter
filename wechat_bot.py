@@ -40,7 +40,7 @@ def get_weekday():
     week_map = ["一", "二", "三", "四", "五", "六", "日"]
     return "星期" + week_map[datetime.today().weekday()]
 
-def get_ai_message(prompt="用温柔的方式说一句不超过10字的话给男朋友鼓励他"):
+def get_ai_message(prompt="说一句10个字左右的冷笑话"):
     print("Generating AI message from Hugging Face...")
 
     url = "https://router.huggingface.co/v1/chat/completions"
